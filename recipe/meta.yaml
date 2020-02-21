@@ -1,0 +1,41 @@
+{% set name = "freetype-py" %}
+{% set version = "2.1.0.post1" %}
+{% set sha256 = "76383bb3e59efa6ce0be1797ed70207d7d1e421611df3aceb269673c4a77c2cc" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools_scm
+  run:
+    - python
+    - freetype
+
+test:
+  imports:
+    - freetype
+
+about:
+  home: https://github.com/rougier/freetype-py
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  summary: 'Python binding for the freetype library'
+  description: |
+    Freetype Python provides bindings for the FreeType library.
+    Only the high-level API is bound.
+  doc_url: https://freetype-py.readthedocs.io/
+  dev_url: https://github.com/rougier/freetype-py
