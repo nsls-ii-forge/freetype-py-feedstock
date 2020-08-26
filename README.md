@@ -5,7 +5,7 @@ Home: https://github.com/rougier/freetype-py
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Python binding for the freetype library
 

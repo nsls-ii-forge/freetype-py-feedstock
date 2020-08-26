@@ -1,19 +1,19 @@
 {% set name = "freetype-py" %}
-{% set version = "2.1.0.post1" %}
-{% set sha256 = "76383bb3e59efa6ce0be1797ed70207d7d1e421611df3aceb269673c4a77c2cc" %}
+{% set version = "2.2.0" %}
+{% set sha256 = "cf43716bc5246cd54a64b2238b942e8dc80b79eda92f814c720286fa6fab387a" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
   sha256: {{ sha256 }}
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -33,7 +33,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Python binding for the freetype library'
+  summary: Python binding for the freetype library
   description: |
     Freetype Python provides bindings for the FreeType library.
     Only the high-level API is bound.
